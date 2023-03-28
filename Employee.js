@@ -1,4 +1,4 @@
-const IS_ABSENT =0;
+
 
 const Is_PART_TIME = 1;
 const IS_FULL_TIME = 2;
