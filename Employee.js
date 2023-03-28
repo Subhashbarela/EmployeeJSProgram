@@ -1,7 +1,3 @@
-
-
-const IS_ABSENT =0;
-
 const Is_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_HR = 4;
@@ -9,11 +5,6 @@ const FULL_TIME_HR = 8;
 const WAGE_PER_HR = 20;
 const NUMBER_WORKING_DAYS = 10;
 const MAX_HRS = 100;
-
-
-
-
-
 
 
 function getWorkingHours(emp_check){
@@ -38,6 +29,10 @@ let totalWorkingDays=0;
 
 let empDailyWageArray = new Array();
 
+let empMap = new Map();
+
+
+
 while(totalEmpHrs<=MAX_HRS && totalWorkingDays<NUMBER_WORKING_DAYS)
 {
     totalWorkingDays++;
@@ -45,10 +40,11 @@ while(totalEmpHrs<=MAX_HRS && totalWorkingDays<NUMBER_WORKING_DAYS)
     empHrs=getWorkingHours(emp_check);
     totalEmpHrs+=empHrs;
     empDailyWageArray.push(calculateDailyWage(empHrs))
+    empMap.set(totalWorkingDays, calculateDailyWage(empHrs))
 }
 
 
-console.log(empDailyWageArray);
+console.log(empMap);
 
 let empWage = calculateDailyWage(totalEmpHrs);
 console.log("Wage for the month: "+empWage);
