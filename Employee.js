@@ -6,7 +6,6 @@ const WAGE_PER_HR = 20;
 const NUMBER_WORKING_DAYS = 10;
 const MAX_HRS = 100;
 
-
 function getWorkingHours(emp_check){
     switch(emp_check){
         case Is_PART_TIME:
